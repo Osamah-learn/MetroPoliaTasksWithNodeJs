@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Add customer
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+  body
+  table.table.table-striped
+    h1 New customer
+    form(action='/addmovie', method='POST')
+      div
+        input(type="text", name="firstname" placeholder="Enter firstname").form-control.text
+      div
+        input(type="text", name="lastname" placeholder="Enter lastname").form-control.text
+      div
+        input(type="email", name="email"  placeholder="Enter email").form-control.text
+      div
+        div
+        input(type="number", name="number"  placeholder="Enter Phone number").form-control.number
+      div
+        input(type="submit", value="Add").btn.btn-primary
