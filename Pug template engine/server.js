@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 8080;
+const bodyParser = require("body-parser");
 app.set("view engine", "pug");
 
 let movies = [
@@ -26,6 +27,9 @@ let movies = [
 
 app.get("/movies", (req, res) => {
   res.render("movielist", { movies });
+});
+app.get("/addmovie", (req, res) => {
+  res.render("addmovie");
 });
 
 app.get("/hello", (req, res) => {
