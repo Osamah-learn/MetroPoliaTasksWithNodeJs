@@ -51,6 +51,6 @@ app.post("/addcustomer", (req, res) => {
   res.redirect("/customers");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}.`);
-});
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on port ${port}.`);
+  });
