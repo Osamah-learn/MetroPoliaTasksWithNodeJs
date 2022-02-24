@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 const bodyParser = require("body-parser");
 app.set("view engine", "pug");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let movies = [
   {
@@ -35,6 +36,12 @@ app.get("/addmovie", (req, res) => {
 app.get("/hello", (req, res) => {
   res.render("hello", { firstname: "Osamah", lastname: "Amer" });
 });
+app.post("/addmovie", (req, res) => {
+    const newMovie = {id: new Date().now, title: req.body.title, director: req.body.director, year: req.body.year};
+    movies = [...movies, newMovie];
+    res.redirect("/movies");
+  })
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}.`);
 });
